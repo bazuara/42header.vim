@@ -119,7 +119,9 @@ function s:line(n)
 endfunction
 
 function s:user()
-  if exists('b:fortytwoheader_user')
+  if exists('g:fortytwoheader_user')
+    let l:user = g:fortytwoheader_user
+  elseif exists('b:fortytwoheader_user')
     let l:user = b:fortytwoheader_user
   else
     let l:user = $USER
@@ -131,7 +133,9 @@ function s:user()
 endfunction
 
 function s:mail()
-  if exists('b:fortytwoheader_mail')
+  if exists('g:fortytwoheader_mail')
+    let l:mail = g:fortytwoheader_mail
+  elseif exists('b:fortytwoheader_mail')
     let l:mail = b:fortytwoheader_mail
   else
     let l:mail = $MAIL
